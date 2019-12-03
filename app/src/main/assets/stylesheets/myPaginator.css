@@ -1,0 +1,42 @@
+﻿
+ul.paginator {	
+	text-align: center;
+	margin:5px;
+}
+
+ul.paginator li {
+	display: inline-block;	
+}
+
+ul.paginator li a {
+	height: 30px;
+	width: 30px;
+	box-sizing: border-box;
+	line-height: 30px;
+	
+	display: block;
+	text-decoration: none;
+	margin: 3px;
+	color: #555;
+	border: 1px solid #aaa;
+}
+
+ul.paginator li a:hover {
+	color: #333;
+	border: 1px solid #444;
+	box-shadow: 1px 1px 2px #777;
+}
+
+ul.paginator li a.current {
+	color: #333;
+	border: 1px solid #333;
+}
+
+ul.paginator li.disabled {
+	pointer-events:none;  /*This makes it not clickable */      
+}
+
+ul.paginator li.disabled a.btn {	
+	background-color: #eee;
+    opacity:0.2;     
+}

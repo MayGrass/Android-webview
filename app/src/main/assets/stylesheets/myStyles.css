@@ -1,0 +1,124 @@
+@charset "UTF-8";
+
+#container {
+	width: 700px;
+	margin: 50px auto;
+	border: 1px solid #444;
+	padding: 30px;
+	box-shadow: 2px 2px 10px #333;
+	font-family: Arial;
+}
+#container.w400 {
+	width: 400px;
+}
+
+#footer{
+	margin:10px 0 5px 0;	
+	text-align:right;	
+}
+div#main-content {	
+	padding:30px;
+}
+/*----------- 表單 -----------*/
+form#main-form {
+	font-size: 1em;
+}
+div.form-group {	
+	margin:10px;	
+}
+div.form-group label {
+	display:block;
+}
+div.form-group input
+{
+	font-size: 1em;
+}
+div.form-group input.form-control
+ {
+	display:block;
+	width:100%;
+	height:2em;
+	padding:2px; 
+	box-sizing: border-box;	
+}
+div.form-group input.form-control.upload {
+	display:inline-block;
+	width:75%;
+	float:left;
+	border:1px solid #aaa;
+}
+div.form-group div.preview {
+	display:inline-block;
+	width:20%;	
+	height:110px;
+	margin-left: 5%;
+  	border:1px solid #aaa;
+	box-sizing: border-box;
+	vertical-align: top;	
+}
+div.form-group div.image-box {
+	display:inline-block;
+	width:40%;
+	height:140px;	
+  	border:1px solid #aaa;
+	box-sizing: border-box;
+	vertical-align: top;
+}
+div.form-group div.table {
+	display:table;
+	width:100%;
+	height:100%;
+}
+div.form-group div.table div.td {
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;	
+}
+div.form-group div.preview  img,
+div.form-group div.image-box img
+ {
+	width: 70%;
+	height: auto;	
+}
+[type=button],[type=submit],[type=reset]{
+	padding:5px 10px;
+	font-weight:bold;
+}
+/*----------- 表格 -----------*/
+table.emp{
+	width: 100%;
+	height: 250px;	
+	margin:auto;
+	border-collapse: collapse;
+	text-align: center;
+	
+	/* 顯示捲軸 */
+	display: block;
+	overflow: auto;/*overflow僅適用於具指定高/寬的block元素(預設visible)*/
+	white-space: nowrap; /*white-space預設normal(文字內容必要時會折行) */
+}
+table.emp th, table.emp td {
+	width: 150px;
+	border: 1px solid #444;
+	padding: 10px 10px;	
+}
+table.emp th{
+	background: #DB7093
+}
+/*----------- 訊息 -----------*/
+div.message{
+	font-size:1.2em;
+	font-weight: bold;	
+}
+div.message .sub-message{
+	font-size:0.8em;
+	font-weight: normal;
+	margin:10px;	
+}
+/*----------- 貼齊 -----------*/
+.right-justify{
+	text-align: right;
+}
+.center-justify{
+	text-align: center;
+}
