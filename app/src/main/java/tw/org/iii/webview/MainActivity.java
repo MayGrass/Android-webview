@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
+import android.webkit.JavascriptInterface;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
@@ -21,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        editText = findViewById(R.id.n);
+        editText = findViewById(R.id.edittext);
         webView = findViewById(R.id.webView);
         initWebView();
     }
@@ -36,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
         webSettings.setSupportZoom(true);
         webSettings.setBuiltInZoomControls(true);
         //webSettings.setDisplayZoomControls(true);
+        webView.addJavascriptInterface(new MyJS(), "DCH");
         webView.loadUrl("file:///android_asset/bootstrap.html");
 //        webView.loadUrl("https://www.iii.org.tw");
     }
@@ -54,5 +56,14 @@ public class MainActivity extends AppCompatActivity {
     public void lottery(View view) {
 //        webView.loadUrl("javascript:test1()");
         webView.loadUrl("javascript:test2("+ editText.getText().toString()+")");
+    }
+
+    public class MyJS {
+        @JavascriptInterface
+        //網頁呈現的都是字串
+        public void callFromJS(String yourname) {
+            Log.v("DCH", "OK");
+            editText.setText(yourname);
+        }
     }
 }
