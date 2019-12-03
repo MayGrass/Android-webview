@@ -78,6 +78,7 @@ public class MainActivity extends AppCompatActivity {
             double lat = location.getLatitude();
             double lng = location.getLongitude();
             Log.v("DCH", lat + "x" + lng);
+            webView.loadUrl("javascript: moveTo(" +lat+ "," +lng+ ")");
         }
 
         @Override
