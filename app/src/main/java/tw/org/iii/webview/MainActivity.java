@@ -5,18 +5,23 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.KeyEvent;
+import android.view.View;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.EditText;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
     private WebView webView;
+    private EditText editText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        editText = findViewById(R.id.n);
         webView = findViewById(R.id.webView);
         initWebView();
     }
@@ -28,10 +33,10 @@ public class MainActivity extends AppCompatActivity {
         WebSettings webSettings = webView.getSettings();
         webSettings.setJavaScriptEnabled(true); //開啟javascript
         //開啟縮放功能
-//        webSettings.setSupportZoom(true);
-//        webSettings.setBuiltInZoomControls(true);
-//        webSettings.setDisplayZoomControls(true);
-        webView.loadUrl("file:///android_asset/jquery_animate.html");
+        webSettings.setSupportZoom(true);
+        webSettings.setBuiltInZoomControls(true);
+        //webSettings.setDisplayZoomControls(true);
+        webView.loadUrl("file:///android_asset/bootstrap.html");
 //        webView.loadUrl("https://www.iii.org.tw");
     }
 
@@ -46,9 +51,8 @@ public class MainActivity extends AppCompatActivity {
         return super.onKeyDown(keyCode, event);
     }
 
-    @Override
-    public void onBackPressed() {
-        super.onBackPressed();
-        Log.v("DCH", "BackPredd");
+    public void lottery(View view) {
+//        webView.loadUrl("javascript:test1()");
+        webView.loadUrl("javascript:test2("+ editText.getText().toString()+")");
     }
 }
